@@ -2,6 +2,7 @@ import { Moon, Menu } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "./ui/button"
+import { ContactButton } from "./help/ContactButton"
 
 const Header = () => {
   return (
@@ -18,30 +19,22 @@ const Header = () => {
         </div>
 
         <nav className="hidden md:flex items-center gap-6">
-        {/*   <Link href="#" className="text-sm font-medium hover:text-primary">
+        <Link href="#" className="text-sm font-medium hover:text-primary">
             Home
           </Link>
           <Link href="#" className="text-sm font-medium hover:text-primary">
-            About Us
+           Ozono
           </Link>
           <Link href="#" className="text-sm font-medium hover:text-primary">
-            Services
+            Purificador de Agua
           </Link>
           <Link href="#" className="text-sm font-medium hover:text-primary">
-            Projects
+            Cafe
           </Link>
-          <Link href="#" className="text-sm font-medium hover:text-primary">
-            Pages
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:text-primary">
-            News
-          </Link> */}
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button variant="default" size="sm" className="hidden md:inline-flex">
-            Contact Us
-          </Button>
+         <ContactButton/>
       
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-6 w-6" />

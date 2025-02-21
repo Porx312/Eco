@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ContactButton from '../help/Contact';
 
 export  const ProductShowcase = () => {
   const features = [
@@ -61,9 +62,7 @@ export  const ProductShowcase = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="lg" className="bg-primary text-white hover:bg-primary-dark">
-                Comprar Ahora
-              </Button>
+             <ContactButton/>
             </motion.div>
           </motion.div>
         </div>

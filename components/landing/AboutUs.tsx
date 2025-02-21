@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Header from "../Header"
 import { ContactButton } from "../help/ContactButton"
+import EcozonoCalculator from "../help/CalculadoraAhorro"
 
 export default function AboutUs() {
   return (
@@ -32,6 +33,7 @@ export default function AboutUs() {
       Solicita una visita gratuita y descubre cómo mejorar tu calidad de vida con nuestro purificador de agua.
     </p>
     <ContactButton/>
+    <EcozonoCalculator/>
   </div>
 
           <div className="absolute bottom-0  right-0 w-[600px] h-[600px] hidden md:block -mb-24 mr-[-100px]">

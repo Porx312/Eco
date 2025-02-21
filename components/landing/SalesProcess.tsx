@@ -2,6 +2,7 @@
 import { motion } from "framer-motion"
 import { Home, UserCheck, PenToolIcon as Tool, ThumbsUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import ContactButton from "../help/Contact"
 
 const steps = [
   {
@@ -57,9 +58,7 @@ const SalesProcess = () => {
           <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
             ¿Listo para experimentar la diferencia de CleanAura? ¡Programe su visita gratuita hoy mismo!
           </p>
-          <Button size="lg" className="bg-primary text-white hover:bg-primary-dark">
-            Programar Visita Gratuita
-          </Button>
+         <ContactButton/>
         </motion.div>
       </div>
     </section>

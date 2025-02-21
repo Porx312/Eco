@@ -19,7 +19,7 @@ interface BenefitCardProps {
 
 const BenefitCard: React.FC<BenefitCardProps> = ({ icon: Icon, title, description }) => (
   <motion.div
-    className="bg-white w-[170px] md:w-[200px] dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+    className="bg-white flex-1  w-[200px] dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     initial={{ opacity: 0, x: -50 }}
