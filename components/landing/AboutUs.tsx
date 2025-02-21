@@ -2,8 +2,15 @@ import Image from "next/image"
 import Header from "../Header"
 import { ContactButton } from "../help/ContactButton"
 import EcozonoCalculator from "../help/CalculadoraAhorro"
+interface AboutUs {
+  title: string;
+  description: string;
+  image: string;
+  background: string;
+  ticket: string;
+}
 
-export default function AboutUs() {
+export default function AboutUs({background,description,image,ticket,title}:AboutUs) {
   return (
     <div className=" bg-background">
      
@@ -11,7 +18,7 @@ export default function AboutUs() {
       <section className="relative  bg-blue-300">
         <div className="absolute inset-0">
           <Image
-            src="/images/web.png"
+            src={background}
             alt="Background"
             fill
             className="object-cover opacity-90 "
@@ -23,22 +30,21 @@ export default function AboutUs() {
         <div className="relative container mx-auto px-4 pt-32 pb-24">
         <div className="max-w-2xl space-y-6">
     <span className="inline-block px-4 py-1.5 bg-white/60 text-primary text-sm font-medium rounded-full">
-      Agua pura para tu hogar, bienestar para tu familia
+     {ticket}
     </span>
     <h1 className="text-4xl md:text-6xl font-bold text-white">
-      Purificamos tu agua, mejoramos tu vida
+      {title}
     </h1>
     <p className="text-lg text-zinc-300 max-w-lg">
-      Disfruta de agua 100% limpia y segura todos los días. Olvídate del agua embotellada y ahorra mientras cuidas tu salud y el planeta.  
-      Solicita una visita gratuita y descubre cómo mejorar tu calidad de vida con nuestro purificador de agua.
+     {description}
     </p>
     <ContactButton/>
     <EcozonoCalculator/>
   </div>
 
-          <div className="absolute bottom-0  right-0 w-[600px] h-[600px] hidden md:block -mb-24 mr-[-100px]">
+          <div className="absolute bottom-45  right-0 w-[500px] h-[500px] hidden md:block  -mb-24 mr-[-100px]">
              <Image
-              src="/images/bottle.png"
+              src={image}
               alt="Water Bottles"
               width={400}
               height={400}

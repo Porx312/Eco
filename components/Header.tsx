@@ -22,15 +22,13 @@ const Header = () => {
         <Link href="#" className="text-sm font-medium hover:text-primary">
             Home
           </Link>
-          <Link href="#" className="text-sm font-medium hover:text-primary">
+          <Link href="/ozonizador" className="text-sm font-medium hover:text-primary">
            Ozono
           </Link>
-          <Link href="#" className="text-sm font-medium hover:text-primary">
+          <Link href="/purificador" className="text-sm font-medium hover:text-primary">
             Purificador de Agua
           </Link>
-          <Link href="#" className="text-sm font-medium hover:text-primary">
-            Cafe
-          </Link>
+         
         </nav>
 
         <div className="flex items-center gap-4">
