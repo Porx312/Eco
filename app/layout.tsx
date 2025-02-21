@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-primary",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700"], // Asegúrate de incluir los pesos disponibles
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400"], // Especifica un peso compatible
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ibmPlexMono.variable} ${inter.variable} `}
       >
         {children}
       </body>
