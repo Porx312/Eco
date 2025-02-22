@@ -14,7 +14,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const menuItems = [
-    { href: "/", label: "Home" },
+/*     { href: "/", label: "Home" }, */
     { href: "/ozonizador", label: "Ozonizador" },
     { href: "/purificador", label: "Purificador de Agua" },
   ];
