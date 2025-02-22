@@ -61,7 +61,7 @@ const ProcessTimeline: FC<ProcessTimelineProps> = ({
                 <div className="relative flex-shrink-0 mr-6">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className="h-10 w-10 bg-gradient-to-br from-sky-200 to-sky-400 rounded-full flex items-center justify-center ring-8 ring-white shadow-lg"
+                    className="h-10 w-10 bg-gradient-to-br from-sky-200 to-sky-300 rounded-full flex items-center justify-center ring-8 ring-white shadow-lg"
                   >
                     <Icon className="w-5 h-5 text-white" />
                   </motion.div>

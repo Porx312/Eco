@@ -30,7 +30,7 @@ const BenefitCard: React.FC<Benefit> = ({ icon, title, description }) => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Icon className="w-12 h-12 text-primary mb-4 text-sky-300" />
+      <Icon className="w-12 h-12  mb-4 text-sky-300" />
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-gray-600 dark:text-gray-300">{description}</p>
     </motion.div>

@@ -41,7 +41,6 @@ export default function ContactButton({ text }: { text: string }) {
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
     reset,
   } = useForm<FormData>({
@@ -76,7 +75,7 @@ export default function ContactButton({ text }: { text: string }) {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        title: "Error",
+        title: ` Error ${error}`,
         text: "Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.",
         confirmButtonColor: "#d33",
       });
