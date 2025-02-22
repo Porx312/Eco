@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, ChevronUp } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
@@ -36,19 +36,31 @@ const faqs = [
     answer:
       "Sí, CleanAura es eficaz tanto con agua del grifo como con agua de pozo. Sin embargo, para agua de pozo, recomendamos realizar un análisis previo para asegurarnos de que nuestro sistema estándar sea suficiente o si se necesita algún pre-tratamiento adicional.",
   },
-]
+];
 interface FAQItemProps {
-    question: string;
-    answer: string;
-    isOpen: boolean;
-    toggleOpen: () => void;
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  toggleOpen: () => void;
 }
 const FAQItem = ({ question, answer, isOpen, toggleOpen }: FAQItemProps) => {
   return (
-    <motion.div className="border-b border-gray-200 dark:border-gray-700" initial={false}>
-      <button className="flex justify-between items-center w-full py-4 text-left" onClick={toggleOpen}>
-        <span className="text-lg font-medium text-gray-900 dark:text-white">{question}</span>
-        {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+    <motion.div
+      className="border-b border-gray-200 dark:border-gray-700"
+      initial={false}
+    >
+      <button
+        className="flex justify-between items-center w-full py-4 text-left"
+        onClick={toggleOpen}
+      >
+        <span className="text-lg font-medium text-gray-900 dark:text-white">
+          {question}
+        </span>
+        {isOpen ? (
+          <ChevronUp className="w-5 h-5" />
+        ) : (
+          <ChevronDown className="w-5 h-5" />
+        )}
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
@@ -62,36 +74,46 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen }: FAQItemProps) => {
             }}
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
-            <div className="pb-4 text-gray-700 dark:text-gray-300">{answer}</div>
+            <div className="pb-4 text-gray-700 dark:text-gray-300">
+              {answer}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
     </motion.div>
-  )
-}
+  );
+};
 
 const FAQSection = () => {
-  const [openItems, setOpenItems] = useState<number[]>([])
+  const [openItems, setOpenItems] = useState<number[]>([]);
 
   const toggleItem = (index: number) => {
     setOpenItems((currentOpenItems) =>
       currentOpenItems.includes(index)
         ? currentOpenItems.filter((item) => item !== index)
         : [...currentOpenItems, index],
-    )
-  }
+    );
+  };
 
   const toggleAll = () => {
-    setOpenItems((currentOpenItems) => (currentOpenItems.length === faqs.length ? [] : faqs.map((_, index) => index)))
-  }
+    setOpenItems((currentOpenItems) =>
+      currentOpenItems.length === faqs.length
+        ? []
+        : faqs.map((_, index) => index),
+    );
+  };
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-900">
+    <section className="py-16 bg-gradient-to-b from-sky-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Preguntas Frecuentes</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+          FAQ’s ¿Tienes alguna duda?
+        </h2>
         <div className="max-w-3xl mx-auto">
           <Button onClick={toggleAll} className="mb-6" variant="outline">
-            {openItems.length === faqs.length ? "Colapsar Todo" : "Expandir Todo"}
+            {openItems.length === faqs.length
+              ? "Colapsar Todo"
+              : "Expandir Todo"}
           </Button>
           {faqs.map((faq, index) => (
             <FAQItem
@@ -105,8 +127,7 @@ const FAQSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FAQSection
-
+export default FAQSection;

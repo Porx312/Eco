@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
-  const body = await request.json()
+  const body = await request.json();
 
   // Configurar el transporter de nodemailer
   const transporter = nodemailer.createTransport({
@@ -13,7 +13,7 @@ export async function POST(request: Request) {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
-  })
+  });
 
   try {
     // Enviar el email
@@ -24,9 +24,6 @@ export async function POST(request: Request) {
       text: `
         Nombre: ${body.firstName} ${body.lastName}
         Dirección: ${body.address}
-        Fecha: ${body.date}
-        Hora: ${body.time}
-        Código Postal: ${body.postalCode}
         Teléfono: ${body.phone}
         Comentario: ${body.comment || "No proporcionado"}
       `,
@@ -34,18 +31,17 @@ export async function POST(request: Request) {
         <h1>Nuevo mensaje de contacto</h1>
         <p><strong>Nombre:</strong> ${body.firstName} ${body.lastName}</p>
         <p><strong>Dirección:</strong> ${body.address}</p>
-        <p><strong>Fecha:</strong> ${body.date}</p>
-        <p><strong>Hora:</strong> ${body.time}</p>
-        <p><strong>Código Postal:</strong> ${body.postalCode}</p>
         <p><strong>Teléfono:</strong> ${body.phone}</p>
         <p><strong>Comentario:</strong> ${body.comment || "No proporcionado"}</p>
       `,
-    })
+    });
 
-    return NextResponse.json({ message: "Mensaje enviado con éxito" })
+    return NextResponse.json({ message: "Mensaje enviado con éxito" });
   } catch (error) {
-    console.error("Error al enviar el email:", error)
-    return NextResponse.json({ message: "Error al enviar el mensaje" }, { status: 500 })
+    console.error("Error al enviar el email:", error);
+    return NextResponse.json(
+      { message: "Error al enviar el mensaje" },
+      { status: 500 },
+    );
   }
 }
-

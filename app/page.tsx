@@ -4,22 +4,25 @@ import Footer from "@/components/landing/Footer";
 import { ProductShowcase } from "@/components/landing/Product";
 import SalesProcess from "@/components/landing/SalesProcess";
 import WhatsAppButton from "@/components/landing/Whatsapp";
-import { WhyUs } from "@/components/landing/WhyUs";
 import { dataProducts } from "@/data/dataProducts";
 
 export default function Home() {
-  const data = dataProducts.find((product) => product.name === 'purificador')
+  const data = dataProducts.find((product) => product.name === "purificador");
   return (
     <>
-        <AboutUs background={data?.aboutus.background || ''} description={data?.aboutus.description || ''} image={data?.aboutus.image || ''} ticket={data?.aboutus.ticket || ''} title={data?.aboutus.title || ''} />
-     <ProductShowcase/>
-      
-     <SalesProcess/>
-      <WhyUs/>
-      
-      <FAQSection/>
-     <WhatsAppButton/>
-     <Footer/>
+      <AboutUs
+        background={data?.aboutus.background || ""}
+        description={data?.aboutus.description || ""}
+        image={data?.aboutus.image || ""}
+        ticket={data?.aboutus.ticket || ""}
+        title={data?.aboutus.title || ""}
+      />
+
+      <SalesProcess />
+
+      <FAQSection />
+      <WhatsAppButton />
+      <Footer />
     </>
   );
 }
